@@ -9,9 +9,10 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "HttpServerLocation",
+				"relativeUrl": "rkjosa/mod3assign1/blob/main/spotify-2023.csv"
 			},
-			"columnDelimiter": "\t",
+			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": false,
