@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "assignment5-adf"
+		},
+		"LS_AzureBlobStorage_target_connectionString": {
+			"value": ""
+		},
+		"LS_github_source_password": {
+			"value": ""
+		},
+		"LS_github_source_properties_typeProperties_url": {
+			"value": "https://github.com/rkjosa/mod3assign1.git"
+		},
+		"LS_github_source_properties_typeProperties_userName": {
+			"value": "rkjosa"
+		}
+	}
+}

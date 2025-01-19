@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "assignment5-adf"
+		},
+		"LS_AzureBlobStorage_target_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_AzureBlobStorage_target'"
+		},
+		"LS_github_source_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_github_source'"
+		},
+		"LS_github_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/rkjosa/mod3assign1.git"
+		},
+		"LS_github_source_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "rkjosa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "assignment5-adf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureBlobStorage_target_connectionString": {
+						"value": "[parameters('LS_AzureBlobStorage_target_connectionString')]"
+					},
+					"LS_github_source_password": {
+						"value": "[parameters('LS_github_source_password')]"
+					},
+					"LS_github_source_properties_typeProperties_url": {
+						"value": "[parameters('LS_github_source_properties_typeProperties_url')]"
+					},
+					"LS_github_source_properties_typeProperties_userName": {
+						"value": "[parameters('LS_github_source_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
