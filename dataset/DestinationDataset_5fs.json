@@ -12,7 +12,7 @@
 				"type": "AzureBlobStorageLocation",
 				"container": "ingestion"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
