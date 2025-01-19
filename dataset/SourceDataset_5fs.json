@@ -12,7 +12,7 @@
 				"type": "HttpServerLocation",
 				"relativeUrl": "rkjosa/mod3assign1/blob/main/spotify-2023.csv"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": false,
